@@ -1,4 +1,4 @@
-package com.example.newdaepiro
+package com.numberone.daepiro
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

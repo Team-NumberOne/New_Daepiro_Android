@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.newdaepiro"
-    compileSdk = 33
+    namespace = "com.numberone.daepiro"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.newdaepiro"
+        applicationId = "com.numberone.daepiro"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

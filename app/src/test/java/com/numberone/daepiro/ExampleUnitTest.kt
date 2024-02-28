@@ -1,4 +1,4 @@
-package com.example.newdaepiro
+package com.numberone.daepiro
 
 import org.junit.Test
 

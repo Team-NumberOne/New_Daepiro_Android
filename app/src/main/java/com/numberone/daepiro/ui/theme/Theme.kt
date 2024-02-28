@@ -1,4 +1,4 @@
-package com.example.newdaepiro.ui.theme
+package com.numberone.daepiro.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -38,7 +38,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun NewDaepiroTheme(
+fun DaepiroTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
