@@ -19,3 +19,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Daepiro"
 include(":app")
+include(":domain")
+include(":feature:home")

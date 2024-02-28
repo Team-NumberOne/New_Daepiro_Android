@@ -1,29 +1,58 @@
 package extensions
 
 import com.android.build.api.dsl.CommonExtension
-import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.gradle.api.plugins.ExtensionAware
+import org.gradle.kotlin.dsl.dependencies
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
-internal fun Project.configureAndroidKotlin(
-    extension: CommonExtension<*, *, *, *, *>,
+internal fun Project.configureKotlinAndroid(
+    commonExtension: CommonExtension<*, *, *, *, *>,
 ) {
-    with(extension) {
-        compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
-        defaultConfig.apply {
-            minSdk = libs.findVersion("minSdk").get().toString().toInt()
-            testInstrumentationRunner = "androidx.test.runner.AndroidJunitRunner"
+    commonExtension.apply {
+        compileSdk = Const.compileSdk
+
+        defaultConfig {
+            minSdk = Const.minSdk
+
+            testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+            vectorDrawables.useSupportLibrary = true
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = Const.JAVA_VERSION
+            targetCompatibility = Const.JAVA_VERSION
         }
-    }
-    tasks.withType<KotlinCompile>().configureEach {
+
         kotlinOptions {
-            jvmTarget =  JavaVersion.VERSION_17.toString()
+            jvmTarget = Const.JAVA_VERSION.toString()
+        }
+
+        dependencies {
+            "detektPlugins"(libs.findLibrary("detekt-plugin-formatting").get())
+        }
+
+        buildTypes {
+            getByName("debug") {
+                proguardFiles(
+                    getDefaultProguardFile("proguard-android.txt"),
+                    "proguard-debug.pro",
+                )
+            }
+
+            getByName("release") {
+                isMinifyEnabled = false
+                proguardFiles(
+                    getDefaultProguardFile("proguard-android.txt"),
+                    "proguard-rules.pro",
+                )
+            }
         }
     }
+}
+
+internal fun CommonExtension<*, *, *, *, *>.kotlinOptions(
+    block: KotlinJvmOptions.() -> Unit,
+) {
+    (this as ExtensionAware).extensions.configure("kotlinOptions", block)
 }

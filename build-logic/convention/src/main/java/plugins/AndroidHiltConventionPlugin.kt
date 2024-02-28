@@ -1,10 +1,9 @@
-package plugins
-
 import extensions.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
+@Suppress("UNUSED")
 class AndroidHiltConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
@@ -14,11 +13,11 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                "implementation"(libs.findLibrary("hilt").get())
+                "implementation"(libs.findLibrary("hilt.android").get())
                 "ksp"(libs.findLibrary("hilt.compiler").get())
+                "testImplementation"(libs.findLibrary("hilt.testing").get())
+                "kspTest"(libs.findLibrary("hilt.testing.compiler").get())
             }
-
         }
     }
-
 }

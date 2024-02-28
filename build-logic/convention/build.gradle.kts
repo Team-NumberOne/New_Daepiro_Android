@@ -1,41 +1,49 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     `kotlin-dsl`
 }
+
+group = "com.daepiro.buildlogic.convention"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
-tasks.withType<KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-}
 
 dependencies {
-    implementation(libs.build.gradle.plugin)
-    implementation(libs.kotlin.gradle.plugin)
+    compileOnly(libs.android.gradle.plugin)
+    compileOnly(libs.kotlin.gradle.plugin)
+    compileOnly(libs.ksp.gradle.plugin)
 }
 
 gradlePlugin {
     plugins {
-        register("androidApp") {
-            id = "daepiro.application"
-            implementationClass = "plugins.AndroidApplicationComposeConventionPlugin"
+        register("androidApplication") {
+            id = "daepiro.android.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
         }
-        register("androidKotlin"){
-            id = "daepiro.kotlin.android"
-            implementationClass = "plugins.AndroidKotlinConventionPlugin"
+        register("androidApplicationCompose") {
+            id = "daepiro.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
+        register("androidLibrary") {
+            id = "daepiro.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidLibraryCompose") {
+            id = "daepiro.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidHilt") {
-            id = "daepiro.hilt"
-            implementationClass = "plugins.AndroidHiltConventionPlugin"
+            id = "daepiro.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
         }
-        register("androidLibrary"){
-            id = "daepiro.library"
-            implementationClass = "plugins.AndroidLibraryComposeConventionPlugin"
+        register("javaLibrary") {
+            id = "daepiro.java.library"
+            implementationClass = "JavaLibraryConventionPlugin"
+        }
+        register("featureCompose") {
+            id = "daepiro.android.feature.compose"
+            implementationClass = "FeatureComposeConventionPlugin"
         }
     }
 }
