@@ -21,3 +21,5 @@ rootProject.name = "Daepiro"
 include(":app")
 include(":domain")
 include(":feature:home")
+include(":feature:funding")
+include(":data")
