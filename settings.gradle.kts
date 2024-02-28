@@ -15,3 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Daepiro"
 include(":app")
+include(":data")
+include(":domain")
+include(":presentation")
+include(":build-logic")
