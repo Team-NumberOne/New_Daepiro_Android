@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.numberone.daepiro.funding"
+    namespace = "com.numberone.daepiro.feature.funding"
 }
 
 dependencies {

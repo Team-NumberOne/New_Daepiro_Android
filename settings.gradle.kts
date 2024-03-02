@@ -18,9 +18,12 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Daepiro"
+
 include(":app")
+include(":core:designsystem")
 include(":domain")
 include(":data")
+include(":feature:main")
 include(":feature:home")
 include(":feature:funding")
 include(":feature:login")

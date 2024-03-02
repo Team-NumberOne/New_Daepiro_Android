@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.numberone.daepiro.login"
+    namespace = "com.numberone.daepiro.feature.login"
 }
 
 dependencies {

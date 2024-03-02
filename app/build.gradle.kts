@@ -18,8 +18,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.feature.home)
-//    implementation(projects.data)
+    implementation(projects.data)
+    implementation(projects.feature.main)
 
-    implementation(libs.timber)
 }
