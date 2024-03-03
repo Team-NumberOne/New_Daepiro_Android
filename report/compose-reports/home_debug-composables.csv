@@ -1,0 +1,4 @@
+package,name,composable,skippable,restartable,readonly,inline,isLambda,hasDefaults,defaultsGroup,groups,calls,
+com.numberone.daepiro.home.Greeting,Greeting,1,1,1,0,0,0,0,0,1,1,
+com.numberone.daepiro.home.GreetingPreview,GreetingPreview,1,1,1,0,0,0,0,0,1,1,
+com.numberone.daepiro.home.ui.theme.DaepiroTheme,DaepiroTheme,1,1,1,0,0,0,1,0,4,5,

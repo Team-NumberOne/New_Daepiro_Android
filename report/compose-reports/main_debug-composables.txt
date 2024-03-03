@@ -1,0 +1,5 @@
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun Greeting(
+  stable name: String
+  stable modifier: Modifier? = @static Companion
+)
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun GreetingPreview()
