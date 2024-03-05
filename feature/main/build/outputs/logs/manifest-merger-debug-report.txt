@@ -1,0 +1,36 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:2:1-16:12
+INJECTED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:2:1-16:12
+	package
+		INJECTED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:5:5-14:19
+activity#com.numberone.daepiro.MainActivity
+ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:6:9-13:20
+	android:exported
+		ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:8:13-36
+	android:name
+		ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:7:13-62
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:9:13-12:29
+action#android.intent.action.MAIN
+ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:10:17-69
+	android:name
+		ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:10:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:11:17-77
+	android:name
+		ADDED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml:11:27-74
+uses-sdk
+INJECTED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml
+INJECTED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/jongseok/AndroidStudioProjects/New_Daepiro_Android/feature/main/src/main/AndroidManifest.xml
