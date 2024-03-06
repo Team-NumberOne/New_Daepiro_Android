@@ -5,13 +5,13 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalAbsoluteTonalElevation
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
+import androidx.compose.material3.Text
 import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -58,13 +58,21 @@ fun BottomNavigationBar(
                 interactionSource = NoRippleTheme,
                 icon = {
                     Icon(
-                        imageVector = if (navItem.route == currentDestination?.route) {
-                            ImageVector.vectorResource(navItem.selectOnIcon)
-                        } else ImageVector.vectorResource(navItem.selectOffIcon),
+                        imageVector = ImageVector.vectorResource(id = navItem.icon),
                         contentDescription = "BottomNavigationBar Icon",
+                        tint =  if (navItem.route == currentDestination?.route) {
+                            Color(0xFFFF6929)
+                        } else Color(0xFFC9CCD4)
                     )
                 },
-                label = { navItem.label },
+                label = {
+                    Text(
+                        text = navItem.label,
+                        color = if (navItem.route == currentDestination?.route) {
+                            Color(0xFFFF6929)
+                        } else Color(0xFFC9CCD4)
+                    )
+                },
                 colors = NavigationBarItemDefaults.colors(
                     indicatorColor = MaterialTheme.colorScheme.surfaceColorAtElevation(
                         LocalAbsoluteTonalElevation.current),
@@ -89,7 +97,6 @@ object NoRippleTheme : MutableInteractionSource {
     override suspend fun emit(interaction: Interaction) {}
     override fun tryEmit(interaction: Interaction) = true
 }
-
 
 @Preview(showBackground = true)
 @Composable

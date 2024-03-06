@@ -2,45 +2,44 @@ package com.numberone.daepiro
 
 import androidx.annotation.DrawableRes
 import com.numberone.daepiro.feature.navigator.R
+import com.numberone.daepiro.navigation.CommunityDestinations
+import com.numberone.daepiro.navigation.FamilyDestinations
+import com.numberone.daepiro.navigation.FundingDestinations
+import com.numberone.daepiro.navigation.HomeDestinations
+import com.numberone.daepiro.navigation.MypageDestinations
 
 sealed class BottomNavigationItem(
-    val label: String,
-    @DrawableRes val selectOnIcon: Int,
-    @DrawableRes val selectOffIcon: Int,
-    val route: String
+    val route: String,
+    @DrawableRes val icon: Int,
+    val label: String
 ) {
-    object Home: BottomNavigationItem(
-        label = "홈",
-        selectOnIcon = R.drawable.icon_home_select_on,
-        selectOffIcon = R.drawable.icon_home_select_off,
-        route = HomeDestinations.HOME
+    data object Home: BottomNavigationItem(
+        route = HomeDestinations.HOME,
+        icon = R.drawable.icon_home,
+        label = "홈"
     )
 
-    object Community: BottomNavigationItem(
-        label = "커뮤니티",
-        selectOnIcon = R.drawable.icon_community_select_on,
-        selectOffIcon = R.drawable.icon_community_select_off,
-        route = CommunityDestinations.COMMUNITY
+    data object Community: BottomNavigationItem(
+        route = CommunityDestinations.COMMUNITY,
+        icon = R.drawable.icon_community,
+        label = "커뮤니티"
     )
 
-    object Family: BottomNavigationItem(
-        label = "가족",
-        selectOnIcon = R.drawable.icon_family_select_on,
-        selectOffIcon = R.drawable.icon_family_select_off,
-        route = FamilyDestinations.FAMILY
+    data object Family: BottomNavigationItem(
+        route = FamilyDestinations.FAMILY,
+        icon = R.drawable.icon_family,
+        label = "가족"
     )
 
-    object Funding: BottomNavigationItem(
-        label = "후원",
-        selectOnIcon = R.drawable.icon_funding_select_on,
-        selectOffIcon = R.drawable.icon_funding_select_off,
-        route = FundingDestinations.FUNDING
+    data object Funding: BottomNavigationItem(
+        route = FundingDestinations.FUNDING,
+        icon = R.drawable.icon_funding,
+        label = "후원"
     )
 
-    object Mypage: BottomNavigationItem(
-        label = "마이페이지",
-        selectOnIcon = R.drawable.icon_mypage_select_on,
-        selectOffIcon = R.drawable.icon_mypage_select_off,
-        route = MypageDestinations.MYPAGE
+    data object Mypage: BottomNavigationItem(
+        route = MypageDestinations.MYPAGE,
+        icon = R.drawable.icon_mypage,
+        label = "마이페이지"
     )
 }

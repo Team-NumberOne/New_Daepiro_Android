@@ -1,4 +1,3 @@
 package,name,composable,skippable,restartable,readonly,inline,isLambda,hasDefaults,defaultsGroup,groups,calls,
 com.numberone.daepiro.BottomNavigationBar,BottomNavigationBar,1,0,1,0,0,0,0,0,1,2,
 com.numberone.daepiro.BottomNavigationBarPreview,BottomNavigationBarPreview,1,1,1,0,0,0,0,0,1,2,
-com.numberone.daepiro.DaepiroNavHost,DaepiroNavHost,1,1,1,0,0,0,1,0,2,2,

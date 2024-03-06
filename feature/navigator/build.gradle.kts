@@ -8,8 +8,10 @@ android {
 
 dependencies {
     implementation(projects.feature.home)
-    implementation(projects.feature.login)
+    implementation(projects.feature.community)
+    implementation(projects.feature.family)
     implementation(projects.feature.funding)
+    implementation(projects.feature.mypage)
 
 
 }
