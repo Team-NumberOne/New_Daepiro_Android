@@ -1,5 +1,0 @@
-stable class CommunityDestinations {
-  stable val ROUTE: String
-  stable val COMMUNITY: String
-  <runtime stability> = Stable
-}
