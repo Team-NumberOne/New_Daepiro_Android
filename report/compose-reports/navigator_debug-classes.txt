@@ -1,0 +1,54 @@
+stable class NoRippleTheme {
+  unstable val interactions: Flow<Interaction>
+  <runtime stability> = Stable
+}
+stable class Home {
+  <runtime stability> = Stable
+}
+stable class Community {
+  <runtime stability> = Stable
+}
+stable class Family {
+  <runtime stability> = Stable
+}
+stable class Funding {
+  <runtime stability> = Stable
+}
+stable class Mypage {
+  <runtime stability> = Stable
+}
+stable class BottomNavigationItem {
+  stable val label: String
+  stable val selectOnIcon: Int
+  stable val selectOffIcon: Int
+  stable val route: String
+  <runtime stability> = Stable
+}
+stable class HomeDestinations {
+  stable val ROUTE: String
+  stable val HOME: String
+  <runtime stability> = Stable
+}
+stable class CommunityDestinations {
+  stable val ROUTE: String
+  stable val COMMUNITY: String
+  <runtime stability> = Stable
+}
+stable class FamilyDestinations {
+  stable val ROUTE: String
+  stable val FAMILY: String
+  <runtime stability> = Stable
+}
+stable class FundingDestinations {
+  stable val ROUTE: String
+  stable val FUNDING: String
+  <runtime stability> = Stable
+}
+stable class MypageDestinations {
+  stable val ROUTE: String
+  stable val MYPAGE: String
+  <runtime stability> = Stable
+}
+stable class MainActivity {
+  <runtime stability> = Stable
+}
