@@ -1,24 +1,3 @@
-stable class Home {
-  <runtime stability> = Stable
-}
-stable class Community {
-  <runtime stability> = Stable
-}
-stable class Family {
-  <runtime stability> = Stable
-}
-stable class Funding {
-  <runtime stability> = Stable
-}
-stable class Mypage {
-  <runtime stability> = Stable
-}
-stable class BottomNavigationItem {
-  stable val route: String
-  stable val icon: Int
-  stable val label: String
-  <runtime stability> = Stable
-}
 stable class HomeDestinations {
   stable val ROUTE: String
   stable val HOME: String
