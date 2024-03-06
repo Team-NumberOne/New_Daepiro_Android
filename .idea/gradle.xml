@@ -34,7 +34,7 @@
             <option value="$PROJECT_DIR$/feature/funding" />
             <option value="$PROJECT_DIR$/feature/home" />
             <option value="$PROJECT_DIR$/feature/login" />
-            <option value="$PROJECT_DIR$/feature/main" />
+            <option value="$PROJECT_DIR$/feature/navigator" />
           </set>
         </option>
       </GradleProjectSettings>
