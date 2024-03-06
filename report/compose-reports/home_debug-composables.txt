@@ -1,0 +1,3 @@
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun HomeScreen(
+  unused stable modifier: Modifier? = @static Companion
+)

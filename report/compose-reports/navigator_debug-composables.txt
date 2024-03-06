@@ -1,5 +1,7 @@
-restartable scheme("[androidx.compose.ui.UiComposable]") fun BottomNavigationBar(
-  unstable navController: NavController
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun DaepiroNavHost(
+  unstable navController: NavHostController? = @dynamic rememberNavController(
+  $composer   =   $composer  , 
+  $changed   =   8
+)
   stable modifier: Modifier? = @static Companion
 )
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun BottomNavigationBarPreview()

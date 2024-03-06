@@ -11,12 +11,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.numberone.daepiro.navigation.HomeDestinations
-import com.numberone.daepiro.navigation.communityGraph
-import com.numberone.daepiro.navigation.familyGraph
-import com.numberone.daepiro.navigation.fundingGraph
-import com.numberone.daepiro.navigation.homeGraph
-import com.numberone.daepiro.navigation.mypageGraph
+import com.numberone.daepiro.graph.communityGraph
+import com.numberone.daepiro.graph.familyGraph
+import com.numberone.daepiro.graph.fundingGraph
+import com.numberone.daepiro.graph.homeGraph
+import com.numberone.daepiro.graph.mypageGraph
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

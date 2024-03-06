@@ -1,0 +1,4 @@
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun CommunityScreen(
+  unused unstable navController: NavController
+  unused stable modifier: Modifier? = @static Companion
+)

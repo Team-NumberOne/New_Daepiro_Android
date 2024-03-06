@@ -2,11 +2,6 @@ package com.numberone.daepiro
 
 import androidx.annotation.DrawableRes
 import com.numberone.daepiro.feature.navigator.R
-import com.numberone.daepiro.navigation.CommunityDestinations
-import com.numberone.daepiro.navigation.FamilyDestinations
-import com.numberone.daepiro.navigation.FundingDestinations
-import com.numberone.daepiro.navigation.HomeDestinations
-import com.numberone.daepiro.navigation.MypageDestinations
 
 sealed class BottomNavigationItem(
     val route: String,

@@ -7,7 +7,6 @@ import androidx.navigation.NavController
 
 @Composable
 fun HomeScreen(
-    navController: NavController,
     modifier: Modifier = Modifier
 ) {
     Text(text = "홈홈홈")
