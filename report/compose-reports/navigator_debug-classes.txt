@@ -1,0 +1,25 @@
+stable class HomeDestinations {
+  stable val ROUTE: String
+  stable val HOME: String
+  <runtime stability> = Stable
+}
+stable class CommunityDestinations {
+  stable val ROUTE: String
+  stable val COMMUNITY: String
+  <runtime stability> = Stable
+}
+stable class FamilyDestinations {
+  stable val ROUTE: String
+  stable val FAMILY: String
+  <runtime stability> = Stable
+}
+stable class FundingDestinations {
+  stable val ROUTE: String
+  stable val FUNDING: String
+  <runtime stability> = Stable
+}
+stable class MypageDestinations {
+  stable val ROUTE: String
+  stable val MYPAGE: String
+  <runtime stability> = Stable
+}
