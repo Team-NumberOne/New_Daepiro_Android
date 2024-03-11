@@ -4,12 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 
 object DaepiroTheme {
-    val colors: Colors
+    val colors: DaepiroColors
     @Composable
     @ReadOnlyComposable
     get() = LocalColors.current
 
-    val typography: Type
+    val typography: DaepiroTypography
     @Composable
     @ReadOnlyComposable
     get() = LocalTypography.current

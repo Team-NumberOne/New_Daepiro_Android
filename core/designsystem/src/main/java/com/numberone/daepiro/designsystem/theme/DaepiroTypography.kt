@@ -1,15 +1,13 @@
 package com.numberone.daepiro.designsystem.theme
 
-import androidx.compose.material3.Typography
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.sp
 
-data class Type(
+data class DaepiroTypography(
     val H1: TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Normal,
@@ -194,4 +192,4 @@ data class Type(
     )
 )
 
-val LocalTypography = staticCompositionLocalOf { Type() }
+val LocalTypography = staticCompositionLocalOf { DaepiroTypography() }

@@ -3,7 +3,7 @@ package com.numberone.daepiro.designsystem.theme
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
-class Colors(
+class DaepiroColors(
     val Black: Color = Color(0xFF000000),
     val White : Color= Color(0xFFFFFFFF),
     val G_50: Color = Color(0xFFEEEEF1),
@@ -79,4 +79,4 @@ class Colors(
     val On_Dmmed: Color = Color(0xFFFFFFFF)
 )
 
-val LocalColors = staticCompositionLocalOf { Colors() }
+val LocalColors = staticCompositionLocalOf { DaepiroColors() }
