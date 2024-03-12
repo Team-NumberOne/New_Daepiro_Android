@@ -1,4 +1,5 @@
 package model
 
 enum class TopNavState {
+    LOGO_ICON, PAGE_NAME, ICON_PAGE_NAME,ICON_PAGE_NAME_TEXT, DROP_DOWN_ICON, PAGE_NAME_TEXT
 }

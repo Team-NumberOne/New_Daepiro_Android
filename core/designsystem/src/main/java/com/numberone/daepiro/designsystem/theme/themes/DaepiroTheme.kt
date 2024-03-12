@@ -1,4 +1,4 @@
-package com.numberone.daepiro.designsystem.theme
+package com.numberone.daepiro.designsystem.theme.themes
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable

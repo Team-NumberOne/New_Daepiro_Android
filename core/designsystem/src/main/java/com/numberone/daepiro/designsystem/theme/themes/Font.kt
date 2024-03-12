@@ -1,4 +1,4 @@
-package com.numberone.daepiro.designsystem.theme
+package com.numberone.daepiro.designsystem.theme.themes
 
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
