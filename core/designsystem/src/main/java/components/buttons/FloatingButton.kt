@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,18 +24,16 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.numberone.daepiro.core.designsystem.R
 import com.numberone.daepiro.designsystem.theme.DaepiroTheme
+import model.DisableState
+import shadow.BtnPressedShadow
 import shadow.FloationShadow
 
-enum class FloatingState{
-    DEFAULF, PRESSED, DISABLED
-}
 
 @Composable
-fun FloatingButton(state: FloatingState, text:String, onClick: () -> Unit){
+fun FloatingButton(state: DisableState, text:String, onClick: () -> Unit){
     when(state){
-        FloatingState.DEFAULF -> DefaultFloatingButton(text = text, onClick = {})
-        FloatingState.PRESSED -> PressedFloatingButton(text =text, onClick = {} )
-        FloatingState.DISABLED -> DisableFloatingButton(text = text)
+        DisableState.DEFAULF -> DefaultFloatingButton(text = text, onClick = onClick)
+        DisableState.DISABLED -> DisableFloatingButton(text = text)
     }
 }
 
@@ -45,6 +45,9 @@ fun DefaultFloatingButton(
     onClick : () -> Unit
     ){
     val interactionSource = remember{ MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+    val backgroundColor = if(isPressed) DaepiroTheme.colors.G_50 else DaepiroTheme.colors.On_Secondary
+
     Box(
         modifier = Modifier.padding(borderRadius)
     ){
@@ -52,7 +55,7 @@ fun DefaultFloatingButton(
             modifier = modifier
                 .FloationShadow(borderRadius = borderRadius)
                 .background(
-                    color = DaepiroTheme.colors.On_Secondary,
+                    color = backgroundColor,
                     shape = RoundedCornerShape(20.dp)
                 )
                 .clickable(
@@ -157,18 +160,12 @@ fun DisableFloatingButton(
 @Preview(showBackground = false)
 @Composable
 fun DefaultFloatingButtonPreview(){
-    FloatingButton(state = FloatingState.DEFAULF , text = "TEXT" , onClick = {} )
-}
-
-@Preview(showBackground = false)
-@Composable
-fun PressedFloatingButtonPreview(){
-    FloatingButton(state = FloatingState.PRESSED , text = "TEXT" ,onClick = {}  )
+    FloatingButton(state = DisableState.DEFAULF , text = "TEXT" , onClick = {} )
 }
 
 @Preview(showBackground = false)
 @Composable
 fun PressedDisableButtonPreview(){
-    FloatingButton(state = FloatingState.DISABLED , text = "TEXT" ,onClick = {}  )
+    FloatingButton(state = DisableState.DISABLED , text = "TEXT" ,onClick = {}  )
 }
 

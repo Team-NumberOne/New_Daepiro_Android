@@ -6,6 +6,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,7 +14,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -31,8 +35,6 @@ fun FilledButton(filledButtonState: PrimaryButtonState, text:String, onClick: ()
     when(filledButtonState){
         PrimaryButtonState.ICONDEFAULT -> FilledButton_default(text = text, onClick = onClick, leftIcon = true)
         PrimaryButtonState.DEFAULT -> FilledButton_default(text = text, onClick = onClick, leftIcon = false)
-        PrimaryButtonState.ICONPRESSED -> FilledButton_pressed(text = text, onClick = onClick, leftIcon = true)
-        PrimaryButtonState.PRESSED -> FilledButton_pressed(text = text, onClick = onClick, leftIcon = false)
         PrimaryButtonState.ICONDISABLED -> FilledButton_disabled(text = text, onClick = onClick, leftIcon = true)
         PrimaryButtonState.DISABLED ->FilledButton_disabled(text = text, onClick = onClick, leftIcon = false)
     }
@@ -48,64 +50,23 @@ fun FilledButton_default(
     leftIcon: Boolean,
 ){
     val interactionSource = remember{ MutableInteractionSource() }
-
-    Box(
-        modifier = modifier
-            .background(DaepiroTheme.colors.Primary, shape = RoundedCornerShape(buttonRadius))
-            .fillMaxWidth()
-            .clickable (
-                interactionSource = interactionSource,
-                indication = null,
-            ){
-                onClick()
-            }
-            .padding(vertical = 13.dp),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = "$text",
-            color = DaepiroTheme.colors.On_Primary,
-            style = DaepiroTheme.typography.button,
-            modifier = Modifier.align(Alignment.Center)
-        )
-
-        if (leftIcon) {
-            Row(
-                modifier = Modifier.align(Alignment.CenterStart),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Image(
-                    modifier = Modifier.padding(start = 16.dp),
-                    painter = painterResource(id = R.drawable.ic_alarm),
-                    colorFilter = ColorFilter.tint(DaepiroTheme.colors.On_Primary),
-                    contentDescription = null
-                )
-            }
-        }
-    }
-
-}
-
-@RequiresApi(Build.VERSION_CODES.O)
-@Composable
-//그림자를 포함시켜야함
-fun FilledButton_pressed(
-    modifier: Modifier = Modifier,
-    text: String,
-    buttonRadius: Dp = 4.dp,
-    onClick: () -> Unit,
-    leftIcon: Boolean,
-){
-    val interactionSource = remember{ MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+    val backgroundColor = if(isPressed) DaepiroTheme.colors.O_600 else DaepiroTheme.colors.Primary
+    var shadowColor = if(isPressed) Modifier.BtnPressedShadow(borderRadius = buttonRadius) else Modifier
+    var shadowPadding = if(isPressed) {Modifier.padding(2.dp)} else Modifier
 
     Box(
         modifier = Modifier
-            .padding(2.dp)
+            .then(
+                shadowPadding
+            )
     ){
         Box(
             modifier = modifier
-                .BtnPressedShadow(borderRadius = buttonRadius)
-                .background(DaepiroTheme.colors.O_600, shape = RoundedCornerShape(buttonRadius))
+                .then(
+                    shadowColor
+                )
+                .background(color = backgroundColor, shape = RoundedCornerShape(buttonRadius))
                 .fillMaxWidth()
                 .clickable (
                     interactionSource = interactionSource,
@@ -151,18 +112,11 @@ fun FilledButton_disabled(
     onClick: () -> Unit,
     leftIcon: Boolean,
 ) {
-    val interactionSource = remember { MutableInteractionSource() }
 
     Box(
         modifier = modifier
             .background(DaepiroTheme.colors.G_50, shape = RoundedCornerShape(buttonRadius))
             .fillMaxWidth()
-            .clickable(
-                interactionSource = interactionSource,
-                indication = null,
-            ) {
-                onClick()
-            }
             .padding(vertical = 13.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -202,17 +156,6 @@ fun FilledButtonDefault_preview() {
     FilledButton(PrimaryButtonState.DEFAULT, text = "String", onClick = {})
 }
 
-@Preview(showBackground = false)
-@Composable
-fun FilledButtonPressed_icon_preview() {
-    FilledButton(PrimaryButtonState.ICONPRESSED, text = "String", onClick = {})
-}
-
-@Preview(showBackground = false)
-@Composable
-fun FilledButtonPressed_preview() {
-    FilledButton(PrimaryButtonState.PRESSED, text = "String", onClick = {})
-}
 
 @Preview(showBackground = true)
 @Composable
