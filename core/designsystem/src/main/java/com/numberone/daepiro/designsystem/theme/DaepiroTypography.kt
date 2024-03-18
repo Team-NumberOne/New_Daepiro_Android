@@ -8,7 +8,7 @@ import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.sp
 
 data class DaepiroTypography(
-    val H1: TextStyle = TextStyle(
+    val h1: TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Normal,
         fontSize = 96.sp,
@@ -22,7 +22,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val H2: TextStyle = TextStyle(
+    val h2: TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Normal,
         fontSize = 60.sp,
@@ -36,7 +36,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val H3: TextStyle = TextStyle(
+    val h3: TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Medium,
         fontSize = 48.sp,
@@ -50,7 +50,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val H4: TextStyle = TextStyle(
+    val h4: TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.SemiBold,
         fontSize = 34.sp,
@@ -64,7 +64,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val H5: TextStyle = TextStyle(
+    val h5: TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
@@ -78,7 +78,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val H6: TextStyle = TextStyle(
+    val h6: TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp,
@@ -92,7 +92,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val Subtitle_1 : TextStyle = TextStyle(
+    val subTitle1 : TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Bold,
         fontSize = 16.sp,
@@ -106,7 +106,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val Subtitle_2 : TextStyle = TextStyle(
+    val subTitle2 : TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
@@ -120,7 +120,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val body_1 : TextStyle = TextStyle(
+    val body1 : TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
@@ -134,7 +134,7 @@ data class DaepiroTypography(
             trim = LineHeightStyle.Trim.None
         )
     ),
-    val body_2 : TextStyle = TextStyle(
+    val body2 : TextStyle = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
