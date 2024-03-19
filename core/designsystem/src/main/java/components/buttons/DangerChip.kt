@@ -19,14 +19,14 @@ import androidx.compose.ui.unit.dp
 import com.numberone.daepiro.core.designsystem.R
 import com.numberone.daepiro.designsystem.theme.DaepiroTheme
 
-enum class DangerState{
+enum class RiskState{
     DANGER, SAFE
 }
 @Composable
-fun DangerStateChip(state : DangerState){
+fun DangerStateChip(state : RiskState){
     when(state){
-        DangerState.DANGER -> DangerChip(text = "text", backgroundColor = DaepiroTheme.colors.Danger, textColor = DaepiroTheme.colors.On_Danger, iconColor = DaepiroTheme.colors.On_Danger)
-        DangerState.SAFE -> DangerChip(text = "text", backgroundColor = DaepiroTheme.colors.Safe, textColor = DaepiroTheme.colors.On_Safe, iconColor = DaepiroTheme.colors.On_Safe)
+        RiskState.DANGER -> DangerChip(text = "text", backgroundColor = DaepiroTheme.colors.Danger, textColor = DaepiroTheme.colors.On_Danger, iconColor = DaepiroTheme.colors.On_Danger)
+        RiskState.SAFE -> DangerChip(text = "text", backgroundColor = DaepiroTheme.colors.Safe, textColor = DaepiroTheme.colors.On_Safe, iconColor = DaepiroTheme.colors.On_Safe)
     }
 }
 @Composable
@@ -66,11 +66,11 @@ fun DangerChip(
 @Composable
 @Preview(showBackground = true)
 fun DangerChipPreview(){
-    DangerStateChip(DangerState.DANGER)
+    DangerStateChip(RiskState.DANGER)
 }
 
 @Composable
 @Preview(showBackground = true)
 fun SafeChipPreview(){
-    DangerStateChip(DangerState.SAFE)
+    DangerStateChip(RiskState.SAFE)
 }
