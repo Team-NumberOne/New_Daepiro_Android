@@ -1,5 +1,5 @@
 package model
 
-enum class DisableState {
+enum class FloatingState {
     DEFAULF, DISABLED
 }
