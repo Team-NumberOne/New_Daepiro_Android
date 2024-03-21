@@ -16,8 +16,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.numberone.daepiro.designsystem.theme.DaepiroTheme
+import com.numberone.daepiro.designsystem.theme.Dimmed
+import com.numberone.daepiro.designsystem.theme.On_Dmmed
 import shadow.DimmedShadow
-
+//rememberModalBottomSheetState가 material3에서 실험용
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomSheet(
@@ -34,9 +36,9 @@ fun BottomSheet(
         dragHandle = null,
         shape = RoundedCornerShape(topStart = borderRadius, topEnd = borderRadius),
         //bottomsheet 내부 색상
-        containerColor = DaepiroTheme.colors.On_Dmmed,
+        containerColor = On_Dmmed,
         //bottomsheet 뒤의 배경색상
-        scrimColor = DaepiroTheme.colors.Dimmed
+        scrimColor = Dimmed
     ){
         Box(
             modifier = Modifier

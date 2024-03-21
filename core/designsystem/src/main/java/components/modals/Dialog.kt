@@ -17,9 +17,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import com.numberone.daepiro.designsystem.theme.DaepiroTheme
+import com.numberone.daepiro.designsystem.theme.On_Dmmed
 import shadow.DimmedShadow
 
-@RequiresApi(Build.VERSION_CODES.O)
+//alertdialog는 실험용이기에 import해야함
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Dialog(
@@ -47,7 +48,7 @@ fun Dialog(
                 Column(
                     modifier = Modifier
                         .DimmedShadow(borderRadius = borderRadius)
-                        .background(color = DaepiroTheme.colors.On_Dmmed, shape = RoundedCornerShape(borderRadius))
+                        .background(color = On_Dmmed, shape = RoundedCornerShape(borderRadius))
                         .fillMaxWidth()
                         .padding(horizontal = 42.dp)
                 ) {
