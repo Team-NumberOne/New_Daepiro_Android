@@ -43,14 +43,14 @@ enum class RiskState{
     DANGER, SAFE
 }
 @Composable
-fun DangerStateChip(state : RiskState){
+fun RiskStateChip(state : RiskState){
     when(state){
-        RiskState.DANGER -> DangerChip(text = "text", color = RiskColor.DangerColor)
-        RiskState.SAFE -> DangerChip(text = "text", color = RiskColor.SaftyColor)
+        RiskState.DANGER -> RiskChip(text = "text", color = RiskColor.DangerColor)
+        RiskState.SAFE -> RiskChip(text = "text", color = RiskColor.SaftyColor)
     }
 }
 @Composable
-fun DangerChip(
+fun RiskChip(
     modifier: Modifier = Modifier,
     text : String,
     color: RiskColor
@@ -84,11 +84,11 @@ fun DangerChip(
 @Composable
 @Preview(showBackground = true)
 fun DangerChipPreview(){
-    DangerStateChip(RiskState.DANGER)
+    RiskStateChip(RiskState.DANGER)
 }
 
 @Composable
 @Preview(showBackground = true)
 fun SafeChipPreview(){
-    DangerStateChip(RiskState.SAFE)
+    RiskStateChip(RiskState.SAFE)
 }
