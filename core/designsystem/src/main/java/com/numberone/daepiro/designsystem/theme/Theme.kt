@@ -17,32 +17,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-//fun colors() = DaepiroColors()
-//fun fonts() = DaepiroTypography()
-
-//@Composable
-//fun DaepiroTheme(
-//    colors: DaepiroColors = colors(),
-//    typography: DaepiroTypography = fonts(),
-//    content: @Composable () -> Unit
-//) {
-//    val view = LocalView.current
-//
-//    SideEffect {
-//        if (!view.isInEditMode) {
-//            val window = (view.context as Activity).window
-//            window.statusBarColor = colors.White.toArgb()
-//        }
-//    }
-//
-//    CompositionLocalProvider(
-//        LocalColors provides colors,
-//        LocalTypography provides typography
-//    ) {
-//        content()
-//    }
-//
-//}
 @Composable
 fun DaepiroTheme(
     content: @Composable () -> Unit,
