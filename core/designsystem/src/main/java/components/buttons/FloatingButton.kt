@@ -21,6 +21,11 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.numberone.daepiro.core.designsystem.R
 import com.numberone.daepiro.designsystem.theme.DaepiroTheme
+import com.numberone.daepiro.designsystem.theme.G_200
+import com.numberone.daepiro.designsystem.theme.G_50
+import com.numberone.daepiro.designsystem.theme.G_800
+import com.numberone.daepiro.designsystem.theme.G_900
+import com.numberone.daepiro.designsystem.theme.On_Secondary
 import model.FloatingState
 import shadow.FloationShadow
 
@@ -51,7 +56,7 @@ fun FloatingButton(
             modifier = modifier
                 .FloationShadow(borderRadius = 20.dp)
                 .background(
-                    color = if (isPressed) DaepiroTheme.colors.G_50 else DaepiroTheme.colors.On_Secondary,
+                    color = if (isPressed) G_50 else On_Secondary,
                     shape = RoundedCornerShape(20.dp)
                 )
                 .then(
@@ -70,7 +75,7 @@ fun FloatingButton(
         ){
             Text(
                 text = text,
-                color = if(isDisable == true) DaepiroTheme.colors.G_200 else DaepiroTheme.colors.G_800,
+                color = if(isDisable == true) G_200 else G_800,
                 style = DaepiroTheme.typography.button,
                 modifier = Modifier
                     .padding( top = 9.dp, bottom = 9.dp, start = 24.dp)
@@ -79,7 +84,7 @@ fun FloatingButton(
                 modifier = Modifier
                     .padding(start = 72.dp, top = 8.dp, bottom = 8.dp, end = 14.dp),
                 painter = painterResource(id = R.drawable.ic_plus),
-                colorFilter = ColorFilter.tint(DaepiroTheme.colors.G_900),
+                colorFilter = ColorFilter.tint(G_900),
                 contentDescription = null
             )
         }
@@ -87,41 +92,7 @@ fun FloatingButton(
 }
 
 
-@Composable
-fun DisableFloatingButton(
-    modifier: Modifier = Modifier,
-    text : String,
-    borderRadius : Dp = 20.dp,
-){
-    val interactionSource = remember{ MutableInteractionSource() }
-    Box(
-        modifier = Modifier.padding(borderRadius)
-    ){
-        Box(
-            modifier = modifier
-                .FloationShadow(borderRadius = borderRadius)
-                .background(color = DaepiroTheme.colors.G_200, shape = RoundedCornerShape(20.dp))
-        ){
-            Text(
-                text = text,
-                color = DaepiroTheme.colors.G_800,
-                style = DaepiroTheme.typography.button,
-                modifier = Modifier
-                    .padding( top = 9.dp, bottom = 9.dp, start = 24.dp)
-            )
-            Image(
-                modifier = Modifier
-                    .padding(start = 72.dp, top = 8.dp, bottom = 8.dp, end = 14.dp),
-                painter = painterResource(id = R.drawable.ic_plus),
-                colorFilter = ColorFilter.tint(DaepiroTheme.colors.G_900),
-                contentDescription = null
-            )
-        }
-    }
-}
-
-
-@Preview(showBackground = true)
+@Preview(showBackground = false)
 @Composable
 fun FloatingButtonPreview(){
     Column(

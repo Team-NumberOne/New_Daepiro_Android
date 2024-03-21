@@ -23,6 +23,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.numberone.daepiro.core.designsystem.R
 import com.numberone.daepiro.designsystem.theme.DaepiroTheme
+import com.numberone.daepiro.designsystem.theme.DaepiroTheme.typography
+import com.numberone.daepiro.designsystem.theme.G_300
+import com.numberone.daepiro.designsystem.theme.G_600
+import com.numberone.daepiro.designsystem.theme.G_700
+import com.numberone.daepiro.designsystem.theme.G_900
 import model.PrimaryButtonState
 
 @Composable
@@ -57,11 +62,11 @@ fun PrimaryButtonDefault(
     ){
         if(rightIcon == false){
             if(isDisable == true){
-                Text("$text", style = DaepiroTheme.typography.button, color = DaepiroTheme.colors.G_300)
+                Text("$text", style = typography.button, color = G_300)
             } else{
-                Text("$text", style = DaepiroTheme.typography.button,
+                Text("$text", style = typography.button,
                     color = if (remember { MutableInteractionSource() }.collectIsPressedAsState().value)
-                        DaepiroTheme.colors.G_600 else DaepiroTheme.colors.G_700
+                        G_600 else G_700
                 )
             }
         }
@@ -74,12 +79,12 @@ fun PrimaryButtonDefault(
                     "$text",
                     modifier = Modifier.padding(start = 16.dp),
                     style = DaepiroTheme.typography.button,
-                    color = if(isDisable == true) DaepiroTheme.colors.G_300 else DaepiroTheme.colors.G_700
+                    color = if(isDisable == true) G_300 else G_700
                 )
                 Image(
                     modifier = Modifier.padding(end = 16.dp),
                     painter = painterResource(id = R.drawable.ic_arrow_right),
-                    colorFilter = ColorFilter.tint(DaepiroTheme.colors.G_900),
+                    colorFilter = ColorFilter.tint(G_900),
                     contentDescription = null
                 )
             }
