@@ -18,28 +18,46 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.numberone.daepiro.core.designsystem.R
 import com.numberone.daepiro.designsystem.theme.DaepiroTheme
+import com.numberone.daepiro.designsystem.theme.Danger
+import com.numberone.daepiro.designsystem.theme.On_Danger
+import com.numberone.daepiro.designsystem.theme.On_Safe
+import com.numberone.daepiro.designsystem.theme.Safe
 
+enum class RiskColor(
+    val backgroundColor : Color,
+    val textColor : Color,
+    val iconColor : Color
+){
+    DangerColor(
+        backgroundColor = Danger,
+        textColor = On_Danger,
+        iconColor = On_Danger
+    ),
+    SaftyColor(
+        backgroundColor = Safe,
+        textColor = On_Safe,
+        iconColor = On_Safe
+    )
+}
 enum class RiskState{
     DANGER, SAFE
 }
 @Composable
 fun DangerStateChip(state : RiskState){
     when(state){
-        RiskState.DANGER -> DangerChip(text = "text", backgroundColor = DaepiroTheme.colors.Danger, textColor = DaepiroTheme.colors.On_Danger, iconColor = DaepiroTheme.colors.On_Danger)
-        RiskState.SAFE -> DangerChip(text = "text", backgroundColor = DaepiroTheme.colors.Safe, textColor = DaepiroTheme.colors.On_Safe, iconColor = DaepiroTheme.colors.On_Safe)
+        RiskState.DANGER -> DangerChip(text = "text", color = RiskColor.DangerColor)
+        RiskState.SAFE -> DangerChip(text = "text", color = RiskColor.SaftyColor)
     }
 }
 @Composable
 fun DangerChip(
     modifier: Modifier = Modifier,
     text : String,
-    backgroundColor : Color,
-    textColor : Color,
-    iconColor : Color
+    color: RiskColor
     ) {
     Box(
         modifier = modifier
-            .background(backgroundColor, shape = RoundedCornerShape(4.dp))
+            .background(color.backgroundColor, shape = RoundedCornerShape(4.dp))
             .padding(horizontal = 4.dp, vertical = 4.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -49,7 +67,7 @@ fun DangerChip(
         ) {
             Image(
                 painter = painterResource(id = R.drawable.ic_warning),
-                colorFilter = ColorFilter.tint(iconColor),
+                colorFilter = ColorFilter.tint(color.iconColor),
                 contentDescription = null
             )
             Text(
@@ -57,7 +75,7 @@ fun DangerChip(
                 modifier = Modifier
                     .padding(start = 4.dp),
                 style = DaepiroTheme.typography.caption,
-                color = textColor
+                color = color.textColor
             )
         }
     }
