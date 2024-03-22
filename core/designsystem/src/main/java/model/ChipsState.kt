@@ -1,0 +1,7 @@
+package model
+
+enum class ChipsState {
+    ICON_LEFT_DEFAULT, ICON_LEFT_DISABLED,
+    ICON_RIGHT_DEFAULT, ICON_RIGHT_DISABLED,
+    DEFAULT, DISABLED
+}
