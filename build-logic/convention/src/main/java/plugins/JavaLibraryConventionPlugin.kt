@@ -24,7 +24,7 @@ class JavaLibraryConventionPlugin : Plugin<Project> {
                 jvmToolchain(Const.JDK_VERSION)
             }
 
-            dependencies.add("detektPlugins", libs.findLibrary("detekt-plugin-formatting").get())
+//            dependencies.add("detektPlugins", libs.findLibrary("detekt-plugin-formatting").get())
         }
     }
 }
