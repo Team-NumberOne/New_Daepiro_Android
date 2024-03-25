@@ -51,12 +51,13 @@ dependencies {
     implementation(libs.retrofit.kotlin.serialization)
     implementation(libs.kotlinx.serialization.json)
 
+    implementation(libs.androidx.datastore.core)
+    implementation(libs.androidx.datastore.preferences)
+
 //    implementation(projects.core.android)
 
 //    ksp(libs.room.compiler)
 
-//    implementation(libs.androidx.datastore.core)
-//    implementation(libs.androidx.datastore.preferences)
 //    implementation(libs.protobuf.kotlin.lite)
 
 //    ksp(libs.encrypted.datastore.preference.ksp)
