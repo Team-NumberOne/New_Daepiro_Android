@@ -1,5 +1,11 @@
 package com.numberone.daepiro
 
+object LoginDestinations {
+    const val ROUTE = "loginRoute"
+
+    const val LOGIN = "login"
+}
+
 object HomeDestinations {
     const val ROUTE = "homeRoute"
 
