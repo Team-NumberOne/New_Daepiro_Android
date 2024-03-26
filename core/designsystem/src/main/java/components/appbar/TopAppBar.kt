@@ -34,7 +34,17 @@ enum class TopNavState {
 @Composable
 fun TopAppBar(appBarState: TopNavState, leftText: String? = "", centerText: String? = "", rightText:String? = "" ){
     when(appBarState){
-        TopNavState.LOGO_ICON -> AppBar(leadingIcon = R.drawable.ic_logo, trailingIcon = R.drawable.ic_alarm, isDropdown = false, leftText = null, centerText = null, rightText = null, isLogo = true)
+        TopNavState.LOGO_ICON -> {
+            AppBar(
+                leadingIcon = R.drawable.ic_logo,
+                trailingIcon = R.drawable.ic_alarm,
+                isDropdown = false,
+                leftText = null,
+                centerText = null,
+                rightText = null,
+                isLogo = true
+            )
+        }
         TopNavState.PAGE_NAME -> AppBar(leadingIcon = null, trailingIcon = null, isDropdown = false, leftText = leftText, centerText = null, rightText = null)
         TopNavState.ICON_PAGE_NAME -> AppBar(leadingIcon = R.drawable.ic_arrow_left, trailingIcon = null,  isDropdown = false, leftText = null, centerText = centerText, rightText = null)
         TopNavState.ICON_PAGE_NAME_TEXT -> AppBar(leadingIcon = R.drawable.ic_arrow_left, trailingIcon = null, isDropdown = false, leftText = null, centerText = centerText, rightText = rightText)
