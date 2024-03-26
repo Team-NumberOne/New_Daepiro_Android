@@ -21,7 +21,7 @@ fun LoginScreen(
     Column {
         Button(
             onClick = {
-                viewModel.kakaoLogin(context)
+                viewModel.loginWithKakao(context)
             }
         ) {
             Text(text = "카카오로그인")
