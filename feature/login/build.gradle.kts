@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.kakao.sdk.user)
 }

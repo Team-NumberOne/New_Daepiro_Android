@@ -31,12 +31,6 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideJson(): Json = Json {
-        ignoreUnknownKeys = true
-    }
-
-    @Singleton
-    @Provides
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
         json: Json
@@ -52,5 +46,11 @@ object NetworkModule {
     @Provides
     fun provideService(retrofit: Retrofit): NetworkService {
         return retrofit.create(NetworkService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideJson(): Json = Json {
+        ignoreUnknownKeys = true
     }
 }

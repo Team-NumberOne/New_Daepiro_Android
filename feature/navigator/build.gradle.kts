@@ -7,6 +7,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.feature.login)
     implementation(projects.feature.home)
     implementation(projects.feature.community)
     implementation(projects.feature.family)
