@@ -1,7 +1,9 @@
 package com.numberone.daepiro.login
 
 import android.content.Context
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresExtension
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kakao.sdk.auth.model.OAuthToken
@@ -18,6 +20,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
+import java.io.IOException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -62,20 +66,25 @@ class LoginViewModel @Inject constructor(
         }
     }
 
+    @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     private fun loginWithKakao(token: String) {
         viewModelScope.launch {
             kakaoLoginUseCase(
-                token = token
+//                token = token
+                token = "token99jdjd"
             ).onStart {
                 Log.d("taag", "카톡로그인 시작")
             }.onCompletion {
                 Log.d("taag", "카톡로그인 완료")
-            }.catch {
+            }.catch { e ->
                 Log.d("taag", "카톡로그인 에러")
-                Log.d("taag", it.message.toString())
+                when (e) {
+                    is HttpException -> {
+                        Log.d("taag", e.code().toString())
+                    }
+                    else -> {}
+                }
             }.collectLatest {
-                Log.d("taag", "카톡로그인 수집")
-
                 dataStoreRepository.setUserToken(
                     accessToken = it.accessToken,
                     refreshToken = it.refreshToken
