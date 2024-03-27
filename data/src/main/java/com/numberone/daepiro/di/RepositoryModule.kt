@@ -1,5 +1,7 @@
 package com.numberone.daepiro.di
 
+import com.numberone.daepiro.repository.DataStoreRepository
+import com.numberone.daepiro.repository.DataStoreRepositoryImpl
 import com.numberone.daepiro.repository.UserRepository
 import com.numberone.daepiro.repository.UserRepositoryImpl
 import dagger.Binds
@@ -17,5 +19,11 @@ abstract class RepositoryModule {
     abstract fun provideUserRepository(
         userRepositoryImpl: UserRepositoryImpl
     ): UserRepository
+
+    @Binds
+    @Singleton
+    abstract fun provideDataStoreRepository(
+        dataStoreRepositoryImpl: DataStoreRepositoryImpl
+    ): DataStoreRepository
 
 }
