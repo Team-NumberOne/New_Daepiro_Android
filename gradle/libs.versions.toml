@@ -68,6 +68,8 @@ kakao-user = "2.19.0"
 play-app-update-ktx = "2.1.0"
 better-korean-kotlin = "0.9.4"
 
+slack = "1.20.2"
+
 [plugins]
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -189,6 +191,8 @@ junit-junit = { group = "junit", name = "junit", version.ref = "junit-junit" }
 kakao-sdk-user = { group = "com.kakao.sdk", name = "v2-user", version.ref = "kakao-user"}
 play-app-update = { group = "com.google.android.play", name = "app-update-ktx", version.ref = "play-app-update-ktx"}
 better-korean-kotlin = { group = "com.github.n42corp", name = "betterkoreankotlin", version.ref = "better-korean-kotlin" }
+
+slack-api = { group = "com.slack.api", name = "slack-api-client", version.ref = "slack"}
 
 [bundles]
 firebase = ["firebase-analytics"]

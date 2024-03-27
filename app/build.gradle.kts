@@ -26,6 +26,8 @@ dependencies {
 
     implementation(libs.kakao.sdk.user)
 
+    implementation(libs.slack.api)
+
 }
 
 fun getLocalProperties(propertyKey: String): String {
