@@ -11,7 +11,6 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.numberone.daepiro.repository.DataStoreRepository
-import com.numberone.daepiro.repository.UserRepository
 import com.numberone.daepiro.usecase.KakaoLoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
@@ -21,7 +20,6 @@ import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
-import java.io.IOException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -66,7 +64,6 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     private fun loginWithKakao(token: String) {
         viewModelScope.launch {
             kakaoLoginUseCase(
